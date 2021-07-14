@@ -390,9 +390,11 @@ void MainApplication::print_buffer(unsigned char *buffer, int bufferlen) {
 void MainApplication::print_help() {
   printf(YEL ">>> \n" WHT);
   printf(YEL ">>> " WHT "rawBoson -p<serial port> -b<baudrate> c_command [x_data_0 x_data_1 .... x_data_n] [v][a]" WHT "\n");
-  printf(YEL ">>> " WHT "  ( to read serial number : rawBoson -p/dev/ttyAMC0 -b921600 c00050002 v a )" WHT "\n");
-  printf(YEL ">>> " WHT "  ( to change to black-hot : rawBoson -p/dev/ttyAMC0 -b921600 c000B003 x0 x0 x0 x1 v a )" WHT "\n");
-  printf(YEL ">>> " WHT "  ( to change to white-hot : rawBoson -p/dev/ttyAMC0 -b921600 c000B0003 x0 x0 x0 x0 v a )" WHT "\n");
+  printf(YEL ">>> " WHT "  ( to read serial number : rawBoson -p/dev/ttyACM0 -b921600 c00050002 v a )" WHT "\n");
+  printf(YEL ">>> " WHT "  ( Manually request a flat field correction (FFC) : rawBoson -p/dev/ttyACM0 -b921600 c00050007 v a )" WHT "\n");
+  printf(YEL ">>> " WHT "  ( Get the current focal plane array (FPA) temperature in Celsius. : rawBoson -p/dev/ttyACM0 -b921600 c00050030 v a )" WHT "\n");
+  printf(YEL ">>> " WHT "  ( to change to black-hot : rawBoson -p/dev/ttyACM0 -b921600 c000B0003 x0 x0 x0 x1 v a )" WHT "\n");
+  printf(YEL ">>> " WHT "  ( to change to white-hot : rawBoson -p/dev/ttyACM0 -b921600 c000B0003 x0 x0 x0 x0 v a )" WHT "\n");
   printf(YEL ">>> \n" WHT);
   printf(YEL ">>> " WHT "  v -> verbose, print advanced output on screen" WHT "\n");
   printf(YEL ">>> " WHT "  a -> ascii: print answers in ASCII " WHT "\n");
