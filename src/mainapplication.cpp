@@ -106,7 +106,7 @@ int MainApplication::initilize(int argc, char *argv[])
       print_help();
       printf(RED ">>> Error while opening serial port " CYN "%s" RESET "\n", puerto_str);
       printf(RED ">>> Use rawBoson -p/dev/ttyXXX to select yours." RESET "\n");
-      return -1;   // Exit program
+      return ret;   // Exit program
     }
     if ( debug_on == 1) {
       print_help();
@@ -143,7 +143,7 @@ int MainApplication::initilize(int argc, char *argv[])
     if ( ret < 0 ) {  // Function returns -1 if error
       printf(RED ">>> Error while sending bytes " RESET "\n");
       close_port(serial);
-      return -1;  // Exit program
+      return ret;  // Exit program
     }
     /* STEP 4 */
     // Empty Boson buffers before receiving
@@ -171,7 +171,7 @@ int MainApplication::initilize(int argc, char *argv[])
         printf(RED ">>> Error while receiving bytes " RESET "\n");
       }
       close_port(serial);
-      return -1;
+      return ret;
     }
 
     /* STEP 6 */

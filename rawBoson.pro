@@ -1,5 +1,5 @@
 QT -= gui
-
+VERSION = 0.0.1
 CONFIG += c++11 console
 CONFIG -= app_bundle
 
